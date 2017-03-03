@@ -1,0 +1,45 @@
+- name: create image
+  hosts: localhost
+  connection: local
+  vars:
+    acs_access_key: LTAIV7yukr6Csf14
+    acs_secret_access_key: it9TEJcJvnDyL5uB830fx1BQwzdNdd 
+    region: ap-southeast-1
+    snapshot_id: 
+    image_name:
+    disk_mapping:	
+      -  device: /dev/xvda 
+         snapshot_id: s-t4ng9til7wn2rc31e7ta
+         disk_size: 40    
+    image_version: 40
+    description:
+    images_tags:
+      -  tag_value: abc
+         tag_key: abc   	     
+    instance_id:
+    state: present
+    wait: no
+    wait_timeout: 40
+    launch_permission:                 
+
+  tasks:
+    - name: create image
+      sample:
+        acs_access_key: '{{ acs_access_key }}'
+        acs_secret_access_key: '{{ acs_secret_access_key }}'
+        region: '{{ region }}'
+        snapshot_id: '{{ snapshot_id }}'
+        image_name: '{{ image_name }}'
+        image_version: '{{ image_version }}'
+        description: '{{ description }}'
+        images_tags: '{{ images_tags }}'
+        disk_mapping: '{{ disk_mapping }}'  
+        instance_id: '{{ instance_id }}'
+        state: '{{ state }}'
+        wait: '{{ wait }}'
+        wait_timeout: '{{ wait_timeout }}'
+        #launch_permission: '{{ launch_permission }}'
+      register: result
+
+
+    - debug: var=result
