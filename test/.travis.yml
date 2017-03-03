@@ -33,4 +33,4 @@ script:
   - ansible-playbook -i tests/inventory -vvv tests/test.yml 
 
 notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  webhooks: https://galaxy.ansible.com/api/v1/notifications 
