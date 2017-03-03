@@ -18,7 +18,7 @@ before_install:
 install:
   - sudo pip install docker-py
   - sudo -H pip install ecsutils-1.0.5.zip
-  - sudo -H pip install footmark-1.0.6.tar.gz  
+  - sudo -H pip install footmark-1.0.6.tar.gz
     # software-properties-common for ubuntu 14.04
     # python-software-properties for ubuntu 12.04
   - sudo apt-get install -y sshpass software-properties-common python-software-properties
@@ -30,7 +30,7 @@ install:
  
 
 script:
-  - ansible-playbook -i tests/inventory -vvv tests/test.yml 
+  - ansible-playbook -i tests/inventory -vvv tests/test.yml
 
 notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications 
+  webhooks: https://galaxy.ansible.com/api/v1/notifications
